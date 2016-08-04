@@ -187,6 +187,7 @@ public class Socket {
                     Socket.this.connect();
                 } catch (Exception e) {
                     LOG.log(Level.SEVERE, "Failed to reconnect to " + Socket.this.wsListener, e);
+                    scheduleReconnectTimer();
                 }
             }
         };
